@@ -1,0 +1,7 @@
+.nav-item{
+    font-size: 18px !important;
+    color: white;
+}
+.nav-item:hover{
+    color: red;
+}

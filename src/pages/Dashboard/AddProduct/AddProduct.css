@@ -1,0 +1,14 @@
+.add-product-form input, .add-product-form textarea{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    margin: 10px 0;
+    outline: none;
+    color: black;
+}
+
+.add-product-form button{
+    text-align: center;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+.customer-form{
+    display: flex;
+    flex-direction: column;
+}
+.customer-form input, .customer-form textarea{
+    width: 100%;
+    margin: 5px 0;
+    border: 1px solid black;
+    outline: none;
+    padding: 5px;
+    color: black;
+}
+.customer-from input .submit-btn{
+    border: none;
+}

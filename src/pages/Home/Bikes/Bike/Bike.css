@@ -1,0 +1,19 @@
+.bikeClickableDiv{
+    cursor: pointer;
+}
+
+.bike-descript:hover{
+    background-color: rgb(243, 215, 215);
+}
+.order-btn{
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    background-color: transparent;
+    border: 1px solid rgb(139, 2, 2);
+}
+
+.order-btn:hover{
+    background-color: rgb(134, 3, 3);
+    color: white;
+}

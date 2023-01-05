@@ -1,0 +1,46 @@
+.facebook:hover{
+    cursor: pointer;
+    border: none;
+    background-color: rgb(7, 108, 190);
+    border-radius: 50%;
+}
+.instagram:hover{
+    cursor: pointer;
+    border: none;
+    background-image: linear-gradient(#f12711, #f5af19);
+    border-radius: 50%;
+}
+.linkedin:hover{
+    cursor: pointer;
+    border: none;
+    background-color: rgb(2, 166, 207);
+    border-radius: 50%;
+}
+.twitter:hover{
+    cursor: pointer;
+    border: none;
+    background-color: rgb(75, 182, 209);
+    border-radius: 50%;
+}
+
+.quick-links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.user-feedback-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-feedback-container input, textarea{
+    width: 100%;
+    background: transparent;
+    color: white;
+    margin-top: 10px;
+    outline: none;
+    border: 1px solid white;
+    padding: 5px;
+}
