@@ -5,11 +5,11 @@ import Fade from 'react-reveal/Fade';
 const ShowReview = () => {
 const [reviews, setReviews] = useState([]) || {};
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/reviews')
-    //         .then(res => res.json())
-    //         .then(data => setReviews(data))
-    // }, []);
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, []);
     return (
         <div className="container">
             <Fade top>

@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import CheckoutForm from './CheckoutForm';
 
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
+const stripePromise = loadStripe("pk_test_51MWZq0BPLpGeElP5OLk4qFrc94hvZ13TH9LHZUKKz6rmDIBT0GtVIm3q0lUbKEMBNEkhExCKjs7bQxPy31pV3bmd0003bjt1wT");
 
 // console.log(process.env.REACT_APP_STRIPE_PK);
 
