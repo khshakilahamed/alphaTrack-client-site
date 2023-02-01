@@ -6,6 +6,7 @@ import Footer from '../Shared/Footer/Footer';
 import Navigation from '../Shared/Navigation/Navigation';
 import './Order.css';
 import swal from 'sweetalert';
+import { useHistory } from 'react-router-dom';
 
 
 const Order = () => {
@@ -18,6 +19,8 @@ const Order = () => {
     const phoneNumberRef = useRef();
     const addressRef = useRef();
 
+    const history = useHistory();
+
     const handleConfirm = e => {
         e.preventDefault();
         const userName = user.displayName;
@@ -27,6 +30,7 @@ const Order = () => {
 
         const serviceId = id;
         const orderStatus = "pending";
+        const payment = false;
 
         const order = {
             serviceId,
@@ -37,6 +41,7 @@ const Order = () => {
             userAddress,
             bike_name,
             brand,
+            payment,
             price
         }
 
@@ -53,6 +58,7 @@ const Order = () => {
                     // alert('Order Confirmed');
                     swal("Success!", "Order Placed!", "success");
                     e.target.reset();
+                    history.push("/dashboard/myOrder");
                 }
             })
 

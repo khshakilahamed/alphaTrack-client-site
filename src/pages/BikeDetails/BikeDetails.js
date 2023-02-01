@@ -12,7 +12,7 @@ const BikeDetails = () => {
     const location = useLocation();
     const bikeId = location.state;
 
-    console.log(bike);
+    // console.log(bike);
 
     useEffect(() => {
         fetch(`http://localhost:5000/bikes/${bikeId}`)

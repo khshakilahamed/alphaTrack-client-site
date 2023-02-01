@@ -96,6 +96,7 @@ const ManageOrders = () => {
                             <th scope="col">Product Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Payment</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -107,10 +108,20 @@ const ManageOrders = () => {
                                 <td className="border-end">{order.bike_name}</td>
                                 <td className="border-end">{order.price}</td>
                                 <td className="border-end">{order.orderStatus}</td>
+                                {
+                                    order?.payment ?
+                                        <td className="border-end" style={{ color: 'green' }}>Paid</td>
+                                        :
+                                        <td className="border-end" style={{ color: 'red' }}>Unpaid</td>
+                                }
+
                                 <td className="border-end">
-                                    <button onClick={() => handleDeleteOrder(order._id)} style={{ border: 'none', backgroundColor: 'red', color: 'white', borderRadius: '5px', marginBottom: '5px' }}>Delete</button>
                                     {
-                                        order.orderStatus === 'pending' && <button onClick={() => handleApproveOrder(order._id)} style={{ border: 'none', marginLeft: '5px', backgroundColor: 'green', color: 'white', borderRadius: '5px' }}>Approve</button>
+                                        !order?.payment && <button onClick={() => handleDeleteOrder(order._id)} style={{ border: 'none', backgroundColor: 'red', color: 'white', borderRadius: '5px', marginBottom: '5px' }}>Delete</button>
+                                    }
+                                    <br />
+                                    {
+                                        order.orderStatus === 'pending' && <button onClick={() => handleApproveOrder(order._id)} style={{ border: 'none', backgroundColor: 'green', color: 'white', borderRadius: '5px' }}>Approve</button>
                                     }
                                 </td>
                             </tr>)

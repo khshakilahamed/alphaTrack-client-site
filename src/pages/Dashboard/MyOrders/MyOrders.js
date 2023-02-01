@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
     const { user } = useAuth();
-
     const [orders, setOrders] = useState([]);
     // console.log(orders);
 
@@ -56,8 +56,9 @@ const MyOrders = () => {
                         <tr>
                             <th scope="col">Product Name</th>
                             <th scope="col">Address</th>
-                            <th scope="col">Price</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Payment</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -65,11 +66,30 @@ const MyOrders = () => {
                         {
                             orders.map(order => <tr>
                                 <td>{order.bike_name}</td>
-                                <td>{order.orderStatus}</td>
                                 <td>{order.userAddress}</td>
+                                <td>{order.orderStatus}</td>
                                 <td>{order.price}</td>
+                                {
+                                    order?.payment ?
+                                        <td className="border-end" style={{ color: 'green' }}>Paid</td>
+                                        :
+                                        <td className="border-end">
+                                            <Link to={`/dashboard/payment/${order._id}`}>
+                                                <button
+                                                    style={{
+                                                        border: 'none',
+                                                        backgroundColor: 'green',
+                                                        color: 'white',
+                                                        borderRadius: '5px'
+                                                    }}
+                                                >
+                                                    PAY
+                                                </button>
+                                            </Link>
+                                        </td>
+                                }
                                 <td>
-                                    <button onClick={() => handleCancelOrder(order._id)} style={{ border: 'none' }}>Cancel</button>
+                                    {(order.orderStatus !== "Approved" && !order.payment) && <button onClick={() => handleCancelOrder(order._id)} style={{ border: 'none' }}>Cancel</button>}
                                 </td>
                             </tr>)
                         }
