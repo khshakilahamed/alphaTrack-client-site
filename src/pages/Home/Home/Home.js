@@ -6,15 +6,17 @@ import Bike from '../Bikes/Bike/Bike';
 import Brands from '../Brands/Brands';
 import ShowReview from '../ShowReview/ShowReview';
 import Fade from 'react-reveal/Fade';
+import { Spinner } from 'react-bootstrap';
 
 const Home = () => {
     const [bikes, setBikes] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://alpha-tracks-server-site-g2v8.vercel.app/bikes')
             .then(res => res.json())
             .then(data => setBikes(data))
-    }, []);
+    }, [bikes]);
+
     return (
         <div>
             <Navigation></Navigation>
@@ -26,11 +28,17 @@ const Home = () => {
                     <Fade top>
                         <h2 className="text-danger">Bikes for You</h2>
                     </Fade>
-                    <div className="row my-5">
-                        {
-                            bikes.slice(0, 6).map(bike => <Bike key={bike._id} bike={bike}></Bike>)
-                        }
-                    </div>
+                    {bikes ?
+                        <div className="row my-5">
+                            {
+                                bikes.slice(0, 6).map(bike => <Bike key={bike._id} bike={bike}></Bike>)
+                            }
+                        </div>
+                        :
+                        <div className="text-center" >
+                            <Spinner animation="border" variant="danger" />
+                        </div>
+                    }
                 </div>
             </div>
             <ShowReview></ShowReview>

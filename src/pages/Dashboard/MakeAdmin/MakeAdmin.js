@@ -33,7 +33,7 @@ const MakeAdmin = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/users/admin`, {
+                    fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/users/admin`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'
@@ -57,7 +57,7 @@ const MakeAdmin = () => {
             });
 
         // if (confirmAdmin) {
-        //     fetch(`http://localhost:5000/users/admin`, {
+        //     fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/users/admin`, {
         //         method: 'PUT',
         //         headers: {
         //             'content-type': 'application/json'

@@ -45,7 +45,7 @@ const Order = () => {
             price
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://alpha-tracks-server-site-g2v8.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -65,7 +65,7 @@ const Order = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${id}`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/bikes/${id}`)
             .then(res => res.json())
             .then(data => {
                 setBike(data);

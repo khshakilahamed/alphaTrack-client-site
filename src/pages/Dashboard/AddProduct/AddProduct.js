@@ -31,7 +31,7 @@ const AddProduct = () => {
         const newBike = { bike_name, image, short_des, brand, price }
         // console.log(newBike)
 
-        fetch('http://localhost:5000/bikes', {
+        fetch('https://alpha-tracks-server-site-g2v8.vercel.app/bikes', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

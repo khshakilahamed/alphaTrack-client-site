@@ -9,7 +9,7 @@ const MyOrders = () => {
     // console.log(orders);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/orders/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -28,7 +28,7 @@ const MyOrders = () => {
             .then((willDelete) => {
                 if (willDelete) {
 
-                    fetch(`http://localhost:5000/orders/${id}`, {
+                    fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/orders/${id}`, {
                         method: 'DELETE',
                         headers: {
                             'content-type': 'application.json'

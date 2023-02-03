@@ -18,7 +18,7 @@ const Review = () => {
     const handleReview = e => {
         e.preventDefault();
         const newReview = { displayName: user.displayName, email: user.email, rating, reviewText }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://alpha-tracks-server-site-g2v8.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

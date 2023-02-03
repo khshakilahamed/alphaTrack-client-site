@@ -10,7 +10,7 @@ const Bikes = () => {
     const { isLoading } = useAuth();
 
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://alpha-tracks-server-site-g2v8.vercel.app/bikes')
             .then(res => res.json())
             .then(data => {
                 setBikes(data);

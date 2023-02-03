@@ -15,7 +15,7 @@ const BikeDetails = () => {
     // console.log(bike);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${bikeId}`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/bikes/${bikeId}`)
             .then(res => res.json())
             .then(data => {
                 setBike(data);

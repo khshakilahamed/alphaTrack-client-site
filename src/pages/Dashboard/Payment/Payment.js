@@ -17,7 +17,7 @@ const Payment = () => {
     const { orderId } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order/${orderId}`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/order/${orderId}`)
             .then(res => res.json())
             .then(order => setOrder(order))
     }, [orderId]);

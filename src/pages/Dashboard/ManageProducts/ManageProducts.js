@@ -7,7 +7,7 @@ const ManageProducts = () => {
     const [bikes, setBikes] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://alpha-tracks-server-site-g2v8.vercel.app/bikes')
             .then(res => res.json())
             .then(data => setBikes(data))
     }, [bikes]);
@@ -23,7 +23,7 @@ const ManageProducts = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/bikes/${id}`, {
+                    fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/bikes/${id}`, {
                         method: 'DELETE',
                         headers: {
                             'content-type': 'application/json'

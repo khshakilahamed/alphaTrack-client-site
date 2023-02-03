@@ -54,7 +54,7 @@ const UpdateProduct = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/bikes/${id}`, {
+                    fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/bikes/${id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'
@@ -79,7 +79,7 @@ const UpdateProduct = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${id}`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/bikes/${id}`)
             .then(res => res.json())
             .then(data => setBike(data))
     }, [id]);

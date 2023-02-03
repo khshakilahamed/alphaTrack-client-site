@@ -13,7 +13,7 @@ const BrandItems = () => {
      const [brandBikes, setBrandBikes] = useState([]);
 
      useEffect(() => {
-        fetch(`http://localhost:5000/brandItems/${brandName}`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/brandItems/${brandName}`)
             .then(res => res.json())
             .then(data =>setBrandBikes(data))
     }, []);

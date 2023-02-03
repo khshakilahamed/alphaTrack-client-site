@@ -9,7 +9,7 @@ const ManageOrders = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/orders`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -32,7 +32,7 @@ const ManageOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/orders/${id}`, {
+                    fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/orders/${id}`, {
                         method: 'DELETE',
                         headers: {
                             'content-type': 'application.json'
@@ -63,7 +63,7 @@ const ManageOrders = () => {
                     const matchedOrder = orders.filter(order => order._id === id);
                     matchedOrder[0].orderStatus = "Approved";
 
-                    fetch(`http://localhost:5000/orders/${id}`, {
+                    fetch(`https://alpha-tracks-server-site-g2v8.vercel.app/orders/${id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'
